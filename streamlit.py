@@ -139,12 +139,19 @@ def main():
                 thongBao.markdown("In put at least a piece of news")
             else:
                 if(model == 'LogisticRegression'):
+                    st.write("m1")
                     rs = LGRModel.predict(content)
                 if(model == 'RandomForestClassifier'):
+                    st.write("m2")
+
                     rs = RFCModel.predict(content)
                 if(model == 'MultinomialNB'):
+                    st.write("m3")
+
                     rs = MNBModel.predict(content)
                 if(model == 'SVC'):
+                    st.write("m4")
+
                     rs = SVCModel.predict(content)
                 st.subheader("4. Kết quả:")
                 if(rs[0] == 1):
