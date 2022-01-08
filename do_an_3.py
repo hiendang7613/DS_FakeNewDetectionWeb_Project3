@@ -196,9 +196,6 @@ Preprocessor pipeline
 def dummy(x): return x
 
 
-vectorizer = make_pipeline(CountVectorizer(
-    tokenizer=dummy, lowercase=False), TfidfTransformer())
-
 """Decomposor pipeline"""
 
 decomposors = {
@@ -206,7 +203,6 @@ decomposors = {
     '': FunctionTransformer(dummy),
 }
 
-decomposor = make_pipeline(decomposors['tsvd'])
 
 """Model pipeline"""
 
@@ -216,36 +212,3 @@ models = {
     'mnb': MultinomialNB(),
     'svc': SVC(C=1.0, kernel='linear', degree=3, gamma='auto'),
 }
-
-model = make_pipeline(models['svc'])
-
-"""Full-pipeline"""
-
-pipeline = Pipeline([
-    ('preprocessor', preprocessor),
-    ('vectorizer', vectorizer),
-    ('decomposor', decomposor),
-    ('model', model)
-])
-
-pipeline
-
-"""# Huấn luyện mô hình"""
-
-a = {}
-
-a['2'] = 2
-a['2'] = 2
-a['3'] = 2
-
-score_dict = {}
-
-score_dict
-
-"""#Đánh giá mô hình
-
-## Đánh giá mô hình
-"""
-
-
-"""**Accuracy**"""
