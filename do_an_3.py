@@ -33,8 +33,6 @@ Nguyễn Vinh Quang - 18120229
 
 """# Import"""
 
-
-from sklearn import set_config
 import warnings
 from sklearn import metrics
 import pickle
