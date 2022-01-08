@@ -2,8 +2,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import numpy as np
-import sklearn
 
 # load model
 from do_an_3 import PreprocessText
