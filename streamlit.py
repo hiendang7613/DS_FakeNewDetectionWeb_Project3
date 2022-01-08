@@ -97,20 +97,6 @@ class MergeCol(BaseEstimator, TransformerMixin):
         return data
 
 
-models = {
-    " RandomForestClassifier": "models/pac.pkl",
-    "LogisticRegression": "models/lr.pkl",
-    "MultinomialNB": "models/lr.pkl",
-    "SVC": "models/lr.pkl",
-}
-
-
-RFCModel = pickle.load(open("model/rfc_.model", 'rb'))
-LGRModel = pickle.load(open("model/lgr_.model", 'rb'))
-MNBModel = pickle.load(open("model/mnb_.model", 'rb'))
-SVCModel = pickle.load(open("model/svc_.model", 'rb'))
-
-
 def main():
     # define model
 
@@ -139,19 +125,19 @@ def main():
                 thongBao.markdown("In put at least a piece of news")
             else:
                 if(model == 'LogisticRegression'):
-                    st.write("m1")
+
+                    LGRModel = pickle.load(open("model/lgr_.model", 'rb'))
                     rs = LGRModel.predict(content)
                 if(model == 'RandomForestClassifier'):
-                    st.write("m2")
 
+                    RFCModel = pickle.load(open("model/rfc_.model", 'rb'))
                     rs = RFCModel.predict(content)
                 if(model == 'MultinomialNB'):
-                    st.write("m3")
 
+                    MNBModel = pickle.load(open("model/mnb_.model", 'rb'))
                     rs = MNBModel.predict(content)
                 if(model == 'SVC'):
-                    st.write("m4")
-
+                    SVCModel = pickle.load(open("model/svc_.model", 'rb'))
                     rs = SVCModel.predict(content)
                 st.subheader("4. Kết quả:")
                 if(rs[0] == 1):
