@@ -24,7 +24,7 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 
 annotator = VnCoreNLP("VnCoreNLP-1.1.1.jar",
-                      annotators="wseg,pos,ner,parse", max_heap_size='-Xmx2g')
+                      annotators="wseg", max_heap_size='-Xmx2g')
 
 # load model
 
@@ -97,6 +97,12 @@ class MergeCol(BaseEstimator, TransformerMixin):
         return data
 
 
+RFCModel = pickle.load(open("model/rfc_.model", 'rb'))
+LGRModel = pickle.load(open("model/lgr_.model", 'rb'))
+MNBModel = pickle.load(open("model/mnb_.model", 'rb'))
+SVCModel = pickle.load(open("model/svc_.model", 'rb'))
+
+
 def main():
     # define model
 
@@ -125,19 +131,12 @@ def main():
                 thongBao.markdown("In put at least a piece of news")
             else:
                 if(model == 'LogisticRegression'):
-
-                    LGRModel = pickle.load(open("model/lgr_.model", 'rb'))
                     rs = LGRModel.predict(content)
                 if(model == 'RandomForestClassifier'):
-
-                    RFCModel = pickle.load(open("model/rfc_.model", 'rb'))
                     rs = RFCModel.predict(content)
                 if(model == 'MultinomialNB'):
-
-                    MNBModel = pickle.load(open("model/mnb_.model", 'rb'))
                     rs = MNBModel.predict(content)
                 if(model == 'SVC'):
-                    SVCModel = pickle.load(open("model/svc_.model", 'rb'))
                     rs = SVCModel.predict(content)
                 st.subheader("4. Kết quả:")
                 if(rs[0] == 1):
