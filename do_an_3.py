@@ -35,10 +35,7 @@ Nguyễn Vinh Quang - 18120229
 
 
 import warnings
-from sklearn.decomposition import LatentDirichletAllocation
-from sklearn.decomposition import TruncatedSVD
 from sklearn.compose import ColumnTransformer
-from sklearn.model_selection import train_test_split
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
@@ -210,8 +207,7 @@ vectorizer = make_pipeline(CountVectorizer(
 """Decomposor pipeline"""
 
 decomposors = {
-    'lda': LatentDirichletAllocation(n_components=10, learning_method='online', max_iter=20),
-    'tsvd': TruncatedSVD(n_components=int(100), random_state=42),
+
     '': FunctionTransformer(dummy),
 }
 
