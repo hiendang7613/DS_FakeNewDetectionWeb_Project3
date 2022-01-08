@@ -33,6 +33,7 @@ Nguyễn Vinh Quang - 18120229
 
 """# Import"""
 
+
 import warnings
 from sklearn import metrics
 import pickle
@@ -63,8 +64,6 @@ import seaborn as sns
 from vncorenlp import VnCoreNLP
 import numpy as np
 import pandas as pd
-set_config(display='diagram')  # Để trực quan hóa pipeline
-
 warnings.filterwarnings('ignore')
 
 annotator = VnCoreNLP("VnCoreNLP-1.1.1.jar",
