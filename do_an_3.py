@@ -35,7 +35,6 @@ Nguyễn Vinh Quang - 18120229
 
 
 import warnings
-from sklearn.compose import ColumnTransformer
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
@@ -189,10 +188,6 @@ class MergeCol(BaseEstimator, TransformerMixin):
 
 Preprocessor pipeline
 """
-
-colTransformer = ColumnTransformer(transformers=[('text', PreprocessText(), [
-                                   'text']), ('domain', PreprocessDomain(), ['domain'])])
-preprocessor = make_pipeline(colTransformer, MergeCol())
 
 
 """Vectorizer pipeline"""
