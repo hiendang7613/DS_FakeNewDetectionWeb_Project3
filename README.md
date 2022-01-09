@@ -1,4 +1,4 @@
-"""# Đồ án 3 - Fake news detection
+# Đồ án 3 - Fake news detection
 
 Thành viên : 
 
@@ -11,4 +11,3 @@ Lê Thanh Viễn - 18120647
 Nguyễn Trần Nhật Minh - 18120208
 
 Nguyễn Vinh Quang - 18120229
-"""
