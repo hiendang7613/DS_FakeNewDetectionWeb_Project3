@@ -83,7 +83,8 @@ GBCModel = pickle.load(open("model/gbc_.model", 'rb'))
 MNBModel = pickle.load(open("model/mnb_.model", 'rb'))
 
 def main():
-    # define model
+    st.write("Link file ipynb : https://github.com/hiendang7613/DS_FakeNewDetectionWeb_Project3/blob/main/18120363_1812662_18120647_18120208_18120229.ipynb")
+
     st.header("Fake News Detection Web")
 
     st.subheader("1. Nhập đoạn văn bản bạn muốn kiểm tra:")
